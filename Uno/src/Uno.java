@@ -33,7 +33,9 @@ public class Uno {
 	
 	
 	public void game() {
-				
+			/* this method simulates turns between the two players. when turn is even, player 1 plays and when 
+			   turn is odd player 2 plays.
+			*/	
 		int turn=0;
 		while(!gameOver(p1,p2)) {
 			if(turn%2==0) {
@@ -47,7 +49,7 @@ public class Uno {
 	
 	
 private void distributecards() {
-		
+		//this method distributes cards to the players
 		for(int i=0;i<10;i++) {
 			
 			if(i%2==0) {
@@ -65,6 +67,9 @@ private void distributecards() {
 	
 	
 	public void playGame(Player p) {
+		/*	 this method takes player that is currently playing as an argument.
+			 this method contains entire process for the game.
+		*/
 		
 		decorate();
 		System.out.println(p+", It is your turn\nThe current card on play is:\n"+current);
@@ -160,17 +165,6 @@ private void distributecards() {
 		return false;
 	}
 
-
-
-	public void reviveDeck() {
-		
-		if(deck.isEmpty()) {
-			deck = new Deck(cardpile);
-		}
-		
-	}
-	
-	
 	private boolean isValidChoice(Player p,int choice) {
 		
 		/*
